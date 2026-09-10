@@ -2,14 +2,14 @@ Tables,Nom,Signification,Type,Format,Taille,Obligatoire,Calculée
 Courses,course_id,Unique identifier of the course,Nombre,Entier,—,Oui,Non
 Courses,course_name,Name of the course,Texte,Texte,255,Oui,Non
 Courses,category_id,Category of the course,Nombre,Entier,—,Oui,Non
-Courses,user_id,User or teacher of the course,Nombre,Entier,—,Oui,Non
+Courses,author_id,User or teacher of the course,Nombre,Entier,—,Oui,Non
 Courses,status,Status of the course,Texte,Draft/Published,20,Oui,Non
 Courses,image,Cover image of the course,Texte,Image path,255,Non,Non
 Courses,description,Description of the course,Texte,Texte long,—,Oui,Non
 Courses,content,Content of the course,Texte,Texte long,—,Oui,Non
-Users,user_id,Unique identifier of the user,Nombre,Entier,—,Oui,Non
-Users,name,Full name of the user,Texte,Texte,100,Oui,Non
-Users,email,Email address of the user,Texte,Email,255,Oui,Non
+Authors,author_id,Unique identifier of the user,Nombre,Entier,—,Oui,Non
+Authors,name,Full name of the user,Texte,Texte,100,Oui,Non
+Authors,email,Email address of the user,Texte,Email,255,Oui,Non
 Categories,category_id,Unique identifier of the category,Nombre,Entier,—,Oui,Non
 Categories,category_name,Name of the category,Texte,Texte,100,Oui,Non
 Categories,description,Description of the category,Texte,Texte long,—,Non,Non
