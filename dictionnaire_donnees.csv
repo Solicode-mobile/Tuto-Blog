@@ -1,6 +1,6 @@
 Interface,Nom,Signification,Format,Obligatoire,Calculée
 Article,article_id,Unique identifier of the article,Entier,Oui,Non
-Article,course_name,Name of the article,Texte,Oui,Non
+Article,article_name,Name of the article,Texte,Oui,Non
 Article,description,Description of the article,Texte long,Oui,Non
 Article,content,Content of the article,Texte long,Oui,Non
 Article,image,Cover image of the article,Image path,Non,Non
