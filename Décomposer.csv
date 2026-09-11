@@ -1,0 +1,15 @@
+interface,nom,Signification,Format,Obligatoire,Calculée
+
+Produit,id_produit,Unique identifier of the product,Entier,Oui,Non
+Produit,nom_produit,Name of the product,Texte,Oui,Non
+Produit,prix_produit,Price of the product,Nombre,Oui,Non
+
+Commande,numero_commande,Unique number of the order,Texte,Oui,Non
+Commande,date_commande,Date of the order,JJ/MM/AAAA,Oui,Non
+Commande,quantite_commandee,Quantity ordered,Nombre,Oui,Non
+Commande,id_client,Identifier of the client,Entier,Oui,Non
+Commande,id_produit,Identifier of the product,Entier,Oui,Non
+
+Client,id_client,Unique identifier of the client,Entier,Oui,Non
+Client,nom_client,Name of the client,Texte,Oui,Non
+Client,email_client,Email address of the client,Email,Oui,Non
