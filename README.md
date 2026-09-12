@@ -1,37 +1,52 @@
 # Data Dictionary of a Blog
 
+This documentation is based on `dictionnaire_donnees.csv`.
 
-# Article:
+`Obligatoire` indicates whether a field is required. `Calculé` indicates whether its value is derived automatically.
 
-| name              | meaning                      | type    | nullable | countable | exemple                |
-| ----------------- | ---------------------------- | ------- | -------- | --------- | ---------------------- |
-| article_id        | unique id                    | int     | no       | no        | 101                    |
-| article_name      | name of the article          | varchar | no       | no        | My first article       |
-| description       | description of the article  | text    | no       | no        | Introduction to HTML   |
-| content           | content of the article      | text    | no       | no        | HTML is a markup...    |
-| image             | cover image of the article  | varchar | yes      | no        | url                    |
-| category_id       | category of the article     | int     | no       | no        | 2                      |
-| author_id         | author of the article       | int     | no       | no        | 10                     |
-| date_publication  | publication date of article | date    | no       | no        | 10-09-2026             |
-| status            | draft / published           | enum    | no       | no        | published              |
+## User
 
+| Name | Meaning | Type | Required | Calculated |
+| --- | --- | --- | --- | --- |
+| `nom` | Nom d'auteur | `VARCHAR` | Oui | Non |
+| `prenom` | Prénom d'auteur | `VARCHAR` | Oui | Non |
+| `nom complete` | Nom et prénom d'auteur | `VARCHAR` | X | Oui |
+| `email` | Adresse email de l'auteur | `VARCHAR` | Oui | Non |
+| `mot_de_passe` | Mot de passe de l'auteur | `VARCHAR` | Oui | Non |
+| `photo_profil` | Photo de profil de l'auteur | `VARCHAR` | Non | Non |
 
-# Authors:
+## Champs calculés liés à l'utilisateur
 
-| name         | meaning                    | type    | nullable | countable | exemple          |
-| ------------ | -------------------------- | ------- | -------- | --------- | ---------------- |
-| author_id    | unique id                  | int     | no       | no        | 10               |
-| name         | full name of the author    | varchar | no       | no        | Oussama          |
-| email        | email address of the author| varchar | no       | no        | user@gmail.com   |
-| password     | password of the author     | varchar | no       | no        | ********         |
-| image_auteur | profile picture of author  | varchar | yes      | no        | url              |
+| Name | Meaning | Type | Required | Calculated |
+| --- | --- | --- | --- | --- |
+| `date d'inscreption` | Date d'inscription d'auteur | `DATETIME` | Oui | Non |
 
+## Article
 
-# Categories:
+| Name | Meaning | Type | Required | Calculated |
+| --- | --- | --- | --- | --- |
+| `id_article` | ID article | `INT` | Oui | Non |
+| `titre` | Titre de l'article | `VARCHAR` | Oui | Non |
+| `contenu` | Contenu complet de l'article | `TEXT` | Oui | Non |
+| `id_article_precedent` | ID article précédent | `INT` | X | Oui |
+| `id_article_suivant` | ID article suivant | `INT` | X | Oui |
+| `nombre de vue` | Nombre de vues | `INT` | Oui | Non |
+| `image_article` | Image principale de l'article | `VARCHAR` | Non | Non |
+| `statut_article` | État de l'article (Brouillon ou Publié) | `ENUM` | Oui | Non |
+| `date_creation` | Date de création de l'article | `DATETIME` | Oui | Non |
+| `date_publication` | Date de publication de l'article | `DATETIME` | Non | Non |
+| `temps_lecture_estime` | Durée estimée nécessaire pour lire l'article | `INT` | X | Oui |
 
-| name         | meaning                    | type    | nullable | countable | exemple          |
-| ------------ | -------------------------- | ------- | -------- | --------- | ---------------- |
-| category_id  | unique id                  | int     | no       | no        | 2                |
-| category_name| name of the category       | varchar | no       | no        | Development      |
-| color        | color of the category      | varchar | no       | no        | #3498DB          |
-| icon         | icon of the category       | varchar | no       | no        | code             |
+## Champs calculés liés aux articles
+
+| Name | Meaning | Type | Required | Calculated |
+| --- | --- | --- | --- | --- |
+| `nombre de vue totale` | Nombre de vues totale | `INT` | X | Oui |
+
+## Category
+
+| Name | Meaning | Type | Required | Calculated |
+| --- | --- | --- | --- | --- |
+| `nom_categorie` | Nom de la catégorie | `VARCHAR` | Oui | Non |
+| `couleur` | Couleur associée à la catégorie | `VARCHAR` | Oui | Non |
+| `icone` | Icône associée à la catégorie | `VARCHAR` | Oui | Non |
